@@ -18,7 +18,7 @@ export default function Home() {
     try {
       const res = await axios.post('http://localhost:5000/api/generate', { prompt });
       setResult(res.data.pipeline);
-    } catch (err) {
+    } catch (err : any) {
       setError(err.response?.data?.error || 'Something went wrong');
     } finally {
       setLoading(false);
